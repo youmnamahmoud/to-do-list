@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="myform form">
+        <img src="../../../assets/register.png">
+        <h1 class="text-center">Register</h1>
+        <hr class="line">
+        <form (submit)="onRegister(registerForm)" #registerForm="ngForm" class="form-group">
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control" required placeholder="Name" ngModel name="name" #name="ngModel" >
+            <div class="warning" *ngIf="!name.valid && name.touched">
+              <div *ngIf="name.errors.required">Name is required!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
+                  required placeholder="Email Address" #email="ngModel">
+            <div class="warning" *ngIf="!email.valid && email.touched">
+              <div *ngIf="email.errors.required">Email is required!</div>
+              <div *ngIf="email.errors.pattern">Email is not valid!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" ngModel #password="ngModel" required class="form-control"
+                  placeholder="Password" minlength="5">
+            <div class="warning" *ngIf="!password.valid && password.touched">
+              <div *ngIf="password.errors.required">password is required!</div>
+              <div *ngIf="password.errors.minlength">Password can't be less than 5 characters!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" name="confirmpassword" ngModel #confirmpassword="ngModel" required
+                    validateEqual="password" class="form-control" placeholder="Confirm Password">
+            <div class="warning" *ngIf="!confirmpassword.valid && confirmpassword.touched">
+              <div *ngIf="confirmpassword.errors.required">confirm password is required!</div>
+              <div *ngIf="!confirmpassword.valid && !confirmpassword.errors.required">password mismatch</div>
+            </div>
+          </div>
+          <button type="submit" class=" btn mybtn" [disabled]="!registerForm.valid">Register</button>  
+        </form>
+      </div>
+    </div>
+</div>

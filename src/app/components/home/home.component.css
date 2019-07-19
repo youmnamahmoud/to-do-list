@@ -1,0 +1,104 @@
+form{ 
+  max-width: 500px;;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 30%;
+}
+.data{    
+  margin-top: 50px;
+}
+.data li{ 
+  border-left: 4px solid #386762; 
+  padding: 5px;; 
+  margin: 10px; 
+  color:  rgb(77, 75, 75); 
+}
+.list-instyled{
+  text-align: left;
+}
+.checkbox{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  margin-top: 10px;
+}
+.word{
+  margin-left: 30px;
+}
+a:hover{
+  background-color: #386762;
+}
+li{
+  font-size: 150%;
+}
+.data li i{    
+  float: right;    
+  color: #888;    
+  cursor: pointer;
+}
+.data li button i{
+  float: right;    
+  color: #888;    
+  cursor: pointer;
+}
+input{
+  border-radius: 0%;
+}
+.input-group-text{    
+  background: #c8e9de;    
+  cursor: pointer;
+  border-radius: 0%;
+}
+.input-group-text:hover{
+  background: #98dfc7;
+}
+.delete{
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+}
+.form-control{ 
+  height: 50px;    
+}
+.form-control:focus{ 
+  box-shadow: 0;
+}
+.btn{
+  margin-left: 200px;
+}
+.header{
+  width: 50%;
+  margin-left: 25%;
+}
+.cover{
+  background-color: #c8e9de;
+}
+h1{
+  color: rgb(77, 75, 75);
+  text-align: center;
+}
+.line{
+  width: 60px;
+  background-color: rgb(204, 197, 197);
+}
+.modal-header{
+  background-color: #e1f5ee;
+}
+.saveBtn{
+  border-radius: 0%;
+  border: 2px solid rgb(110, 110, 117);
+  transition-duration: 0.3s;
+  margin-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.saveBtn:hover{
+  background-color: rgb(129, 187, 190);
+transform: scale(1.1);
+border-color: rgb(129, 187, 190);
+}
+::selection {
+  background: #d7f8ed;
+}
+::-moz-selection {
+  background: #d7f8ed;
+}

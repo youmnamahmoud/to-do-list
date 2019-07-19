@@ -1,0 +1,56 @@
+.myform{
+    border-style: double;
+    border-color: rgb(197, 197, 197) ;
+    max-width: 500px;
+    padding: 10%;
+    margin: 5%;
+    text-align: center;
+    margin-top: 25%;
+    background-color: #eef7f4;
+    margin-bottom: 15%;
+}
+input{
+  border: none;
+  border-bottom: 2px solid rgb(110, 110, 117);
+  border-radius: 0%;
+  background-color: #eef7f4;
+}
+.warning{
+  color: #ff0000;
+  text-align: left;
+}
+label{
+  color: rgb(77, 75, 75);
+  font-weight: bold;
+}
+.mybtn{
+  border-radius:0%;
+  border: 2px solid rgb(110, 110, 117);
+  transition-duration: 0.5s;
+  margin-top: 5%;
+}    
+.mybtn:hover{
+  background-color: rgb(129, 187, 190);
+  transform: scale(1.4);
+  border-color: rgb(129, 187, 190);
+}
+form .error {
+  color: #ff0000;
+}
+h1{
+  color: rgb(77, 75, 75);
+}
+.line{
+  width: 60px;
+  background-color: rgb(204, 197, 197);
+}
+::selection {
+  background: #f3c6c9;
+}
+::-moz-selection {
+  background: #f3c6c9;
+}
+img{
+  width:70px;
+  height:90px;
+}

@@ -1,0 +1,19 @@
+.navbar-brand{
+    height: 50px;
+    width: 180px;
+}
+a{
+    font-size: 120%;
+}
+#home:hover{
+    background-color: rgb(215, 239, 240);
+}
+#login:hover{
+    background-color: rgb(247, 220, 243);
+}
+#register:hover{
+    background-color: rgb(245, 240, 177);
+}
+#logout:hover{
+    background-color: #e9ccaa;
+}

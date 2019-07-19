@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="cover">
+    <img class="text-center header" src="../../../assets/todo">
+    </div>
+    <div class="row">
+      <div class="col-lg-6 offset-md-3">
+  <form> 
+    <div class="form-group">
+      <img class="icon" src="../../../assets/icon.png">
+      <h1>Your List</h1>
+      <hr class="line">
+      <br>
+      <div class="input-group-prepend">    
+        <input onfocus="this.value=''" type="text" #todo class="form-control" placeholder="Add Task" name="todo" ngModel>  
+        <span class="input-group-text" (click)="addTodo(todo.value)"><i class="material-icons">add</i></span>  
+      </div>        
+    </div> 
+    <div class="data">  
+      <ul class="list-instyled"> 
+        <li *ngFor="let task of tasks; let i = index">
+          <button class="checkbox icon" (click)="updateChecked(task)">
+            <i class="material-icons">{{task.isDone ? 'check_box' : 'check_box_outline_blank' }}</i>
+          </button>
+          <span class="word">{{task["title"]}}</span>
+                
+          <button type="button" class="btn" data-toggle="modal" [attr.data-target]="'#editPreference'+i">
+            <i class="material-icons">edit</i>
+          </button>
+          <div class="modal fade" [id]="'editPreference'+i" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Edit {{task["title"]}} </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input onfocus="this.value=''" type="text" #edited class="form-control" placeholder="Enter Title" name="edited" ngModel>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" (click)="updateTitle(task, edited)" class="btn saveBtn">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="delete" src="../../../assets/delete.png" (click)="ondeleteItem(task)">
+        </li>
+        <li *ngFor="let todo of todoArray; let j = index">
+          <button class="checkbox icon" (click)="updateTodoChecked(todo)">
+            <i class="material-icons">check_box_outline_blank</i>
+          </button>
+          <span class="word">{{todo}}</span>
+          <button type="button" class="btn" data-toggle="modal" [attr.data-target]="'#editedPreference'+p">
+              <i class="material-icons edit">edit</i>
+            </button>
+            <div class="modal fade" [id]="'editedPreference'+i" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit {{todo}} </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input onfocus="this.value=''" type="text" #editedTodo class="form-control" placeholder="Enter Title" name="editedTodo" ngModel>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" (click)="updateTodo(todo, editedTodo)" class="btn saveBtn">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img class="delete" src="../../../assets/delete.png" (click)="deleteItem(todo)">
+          </li> 
+      </ul> 
+    </div>
+</form>
+</div></div>
+</div>
